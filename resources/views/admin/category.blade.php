@@ -62,13 +62,18 @@
                 <table class="table_dgn">
                     <tr>
                         <th> Category Name</th>
+                        <th> Edit</th>
                         <th> Delete </th>
+
                     </tr>
                    @foreach ($data as $item)
                    <tr>
                     <td> {{$item->category_name}} </td>
                     <td>
-                        <a class="bth btn-danger" onclick="confirmation(event)" href="{{url('delete_category',$item->id)}}">Delete</a>
+                        <a class="btn btn-success" href=" {{url('edit_category',$item->id)}} ">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_category',$item->id)}}">Delete</a>
                     </td>
                 </tr>
 

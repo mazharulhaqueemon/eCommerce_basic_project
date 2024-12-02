@@ -28,4 +28,16 @@ class AdminController extends Controller
         toastr()->closeButton()->success('Category Deleted successfully.');
         return redirect()->back();
     }
+
+    public function edit_category($id){
+        $data = Category::find($id);
+        return view('admin.edit_category',compact('data'));
+    }
+
+    public function update_category(Request $request,$id){
+        $data=Category::find($id);
+        $data->category_name = $request->category;
+        $data->save();
+        return redirect('/admin/view_category');
+    }
 }
