@@ -44,6 +44,11 @@
     <div class="page-content">
         <div class="page-header">
             <div class="container-fluid">
+
+                <form action="">
+                    <input type="search" name="search" >
+                    <input type="submit" class="btn btn-secondary" >
+                </form>
                 <div class="div_dgn">
 
                     <table class="table_dgn">
@@ -54,6 +59,9 @@
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Image</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+
                         </tr>
                         @foreach ($product as $products)
                             <tr>
@@ -65,6 +73,12 @@
                                 <td> {{ $products->quantity }}</td>
                                 <td>
                                     <img height="120" width="120" src="products//{{$products->image}}">
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" href="{{url('product_update',$products->id)}}">Update</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_product',$products->id)}}">Delete</a>
                                 </td>
 
 
@@ -90,14 +104,8 @@
         </div>
     </div>
     <!-- JavaScript files-->
-    <script src="{{ asset('admincss/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admincss/vendor/popper.js/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('admincss/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('admincss/vendor/jquery.cookie/jquery.cookie.js') }}"></script>
-    <script src="{{ asset('admincss/vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('admincss/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('admincss/js/charts-home.js') }}"></script>
-    <script src="{{ asset('admincss/js/front.js') }}"></script>
+    @include('admin.js')
+
 
 </body>
 
