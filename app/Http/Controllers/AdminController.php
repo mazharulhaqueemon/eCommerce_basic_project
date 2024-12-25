@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Pest\Mutate\Event\Events\Test\Outcome\Timeout;
 
 class AdminController extends Controller
 {
@@ -18,7 +19,7 @@ class AdminController extends Controller
         $category = new Category;
         $category->category_name= $request->category;
         $category->save();
-        toastr()->closeButton()->success('Category added successfully.');
+        toastr()->timeOut(10000) ->closeButton()->addSuccess('Category added successfully.');
         return redirect()->back();
 
     }

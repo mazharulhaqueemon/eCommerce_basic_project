@@ -59,7 +59,7 @@
                    <select name="category" >
                     <option value="{{$data->category}}"> {{$data->category}} </option>
                     @foreach ($category as $item)
-                    <option value="">{{$item->category_name}} </option>
+                    <option value="{{$item->category_name}}">{{$item->category_name}}</option>
 
                     @endforeach
                    </select>
