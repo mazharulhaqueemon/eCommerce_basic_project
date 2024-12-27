@@ -43,6 +43,13 @@ Route::get('mycard',[HomeController::class,'mycard'])
 Route::get('delete_cart/{id}',[HomeController::class,'delete_cart'])
 ->middleware(['auth', 'verified']);
 
+Route::post('confirm_order',[HomeController::class,'confirm_order'])
+->middleware(['auth', 'verified']);
+
+
+
+
+
 
 
 
