@@ -37,6 +37,14 @@ Route::get('product_details/{id}',[HomeController::class,'product_details']);
 Route::get('add_cart/{id}',[HomeController::class,'add_cart'])
 ->middleware(['auth', 'verified']);
 
+Route::get('mycard',[HomeController::class,'mycard'])
+->middleware(['auth', 'verified']);
+
+Route::get('delete_cart/{id}',[HomeController::class,'delete_cart'])
+->middleware(['auth', 'verified']);
+
+
+
 
 
 require __DIR__.'/auth.php';
