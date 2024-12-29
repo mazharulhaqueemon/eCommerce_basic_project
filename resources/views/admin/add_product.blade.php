@@ -46,10 +46,7 @@
 
             <form action="{{url('upload_product')}}" method="post" enctype="multipart/form-data" >
                 @csrf
-                <div class="input_dgn">
-                    <label >Product Title</label>
-                    <input type="text" name="title">
-                </div>
+
 
                 <div class="input_dgn">
                     <label >Product Title</label>

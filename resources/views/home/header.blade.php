@@ -37,6 +37,11 @@
             @if (Route::has('login'))
 
             @auth
+            <a href="{{url('myorder')}}">
+               My Orders
+
+              </a>
+
             <a href="{{url('mycard')}}">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                 [{{$count}}]
